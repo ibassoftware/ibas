@@ -7,7 +7,6 @@ from odoo.models import AbstractModel
 class PubWarrantyOverride(AbstractModel):
 	_inherit = 'publisher_warranty.contract'
 
-	@api.multi
 	def update_notification(self, cron_mode=True):
 		set_param = self.env['ir.config_parameter'].sudo().set_param
 		set_param('database.expiration_date', '2050-10-10')
